@@ -3,10 +3,9 @@ nine = 1 + 8
 
 print(nine)
 
-name = "Ali Nakhjavani"
+hand = "Ali Nakhjavani"
+
+print(hand)
 
 doodle = "Barkley"
-
-print(name)
-
 print(doodle, " woof!")
