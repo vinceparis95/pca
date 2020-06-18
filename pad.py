@@ -9,5 +9,4 @@ doodle = "Barkley"
 
 print(name)
 
-print(doodle)
-
+print(doodle, " woof!")
