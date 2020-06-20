@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="App">
     PCA
+    <div className="root2" getElementById="root2"/>
     </div>
+
   );
 }
 

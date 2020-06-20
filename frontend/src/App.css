@@ -17,3 +17,21 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.root2{
+  animation: root2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  height: 90px;
+  width: 90px;
+  background-color: blue;
+  border-radius: 19px;
+  opacity: 45%;
+}
+
+@keyframes root2{
+  50%{width: 180px;
+  }
+
+}
