@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[0],[,,,function(n,e,t){n.exports=t(10)},,,,,function(n,e,t){},function(n,e,t){},function(n,e,t){"use strict";t.r(e);var o=t(0),r=t.n(o),a=t(2),c=t.n(a);t(8),t(9);var l=function(){return r.a.createElement("div",{className:"App",style:{color:"magenta"}},"PCA",r.a.createElement("p",null,"from flask = ",window.token))};c.a.render(r.a.createElement(l,null),document.getElementById("root"))}],[[3,1,2]]]);
+//# sourceMappingURL=main.baf9a095.chunk.js.map
