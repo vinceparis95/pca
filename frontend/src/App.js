@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App" style={{color:'chartreuse'}}>
+    <div className="App" style={{color:'magenta'}}>
     PCA
     <p>My Token = {window.token}</p>
 
