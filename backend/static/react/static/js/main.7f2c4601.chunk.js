@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[0],[,,,function(e,n,t){e.exports=t(10)},,,,,function(e,n,t){},function(e,n,t){},function(e,n,t){"use strict";t.r(n);var o=t(0),a=t.n(o),r=t(2),c=t.n(r);t(8),t(9);var l=function(){return a.a.createElement("div",{className:"App",style:{color:"magenta"}},"PCA",a.a.createElement("p",null,"My Token = ",window.token))};c.a.render(a.a.createElement(a.a.StrictMode,null,a.a.createElement(l,null)),document.getElementById("root"))}],[[3,1,2]]]);
+//# sourceMappingURL=main.7f2c4601.chunk.js.map
