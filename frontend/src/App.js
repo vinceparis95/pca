@@ -3,9 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{color:'chartreuse'}}>
     PCA
-    <div className="root2" getElementById="root2"/>
     </div>
 
   );
