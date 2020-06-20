@@ -31,7 +31,11 @@
 }
 
 @keyframes root2{
+<<<<<<< HEAD
   50%{width: 270px;
+=======
+  50%{width: 180px;
+>>>>>>> chan1
   }
 
 }
