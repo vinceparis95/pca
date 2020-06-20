@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App" style={{color:'chartreuse'}}>
     PCA
-    <p>My Token = {window.token}</p>
+    <p>from flask = {window.token}</p>
 
     </div>
 
