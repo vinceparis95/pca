@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[0],[,,,function(e,n,t){e.exports=t(10)},,,,,function(e,n,t){},function(e,n,t){},function(e,n,t){"use strict";t.r(n);var r=t(0),a=t.n(r),o=t(2),c=t.n(o);t(8),t(9);var l=function(){return a.a.createElement("div",{className:"App",style:{color:"chartreuse"}},"pca app - channel 1",a.a.createElement("p",null,"from flask = ",window.token))};c.a.render(a.a.createElement(l,null),document.getElementById("root"))}],[[3,1,2]]]);
+//# sourceMappingURL=main.93b8568c.chunk.js.map
