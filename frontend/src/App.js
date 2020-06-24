@@ -6,11 +6,14 @@ function App() {
     <div className="App" style={{color:'magenta'}}>
     pca app - channel 2
     <p>from flask = {window.token}</p>
-    <h1>enter details </h1> <br>
-    first name <input type = "text" name= "fname" /> <br>
-    last name <input type = "text" name = "lname" /> <br>
-    <input type = "submit">
-
+    <form method="POST" action="">
+    <center>
+    <h1>Enter your details </h1> <br/>
+    First Name <input type = "text" name= "fname" /> <br/>
+    Last Name <input type = "text" name = "lname" /> <br/>
+    <input type = "submit"/>
+    </center>
+</form>
     </div>
 
   );
