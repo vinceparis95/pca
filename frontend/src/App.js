@@ -8,14 +8,13 @@ function App() {
     <p>from flask = {window.token}</p>
     <form method="POST" action="">
     <center>
-    <h1>Enter your details </h1> <br/>
+    <h1>enter deets </h1> <br/>
     First Name <input type = "text" name= "fname" /> <br/>
     Last Name <input type = "text" name = "lname" /> <br/>
     <input type = "submit"/>
     </center>
-</form>
+    </form>
     </div>
-
   );
 }
 
