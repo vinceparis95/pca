@@ -8,7 +8,7 @@ function App() {
     <p>from flask = {window.token}</p>
     <form method="POST" action="">
     <center>
-    <h1>Enter Details : </h1> <br/>
+    <h1 style={{letterSpacing:'4px'}}>Enter Details : </h1> <br/>
     First Name <input type = "text" name= "fname" /> <br/>
     Last Name <input type = "text" name = "lname" /> <br/>
     <input type = "submit"/>
