@@ -1,13 +1,15 @@
-from flask import (Flask, request, render_template)
+from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
-from flask_sqlalchemy import SQLAlchemy
-import os
-
 app = Flask(__name__)
-app.config["DEBUG"] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:Photon959@localhost/pcadata"
-app.config["SQLALCHEMY_ECHO"] = True
-db = SQLAlchemy(app)
+
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'Photon959'
+app.config['MYSQL_DB'] = 'pcadata'
+
+mysql = MySQL(app)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -15,13 +17,13 @@ def index():
         details = request.form
         firstName = details['fname']
         lastName = details['lname']
-        cur = db.connection.cursor()
+        cur = mysql.connection.cursor()
         cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
-        db.connection.commit()
+        mysql.connection.commit()
         cur.close()
-        return 'success'
     return render_template('index.html')
 
+
 if __name__ == '__main__':
-    app.debug = True
+    app.debug=True
     app.run()
