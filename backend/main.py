@@ -21,7 +21,7 @@ def index():
         cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
         mysql.connection.commit()
         cur.close()
-    return render_template('index.html')
+    return render_template('index.html', flask_token="Allahuabha : ) ")
 
 
 if __name__ == '__main__':
