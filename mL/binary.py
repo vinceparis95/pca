@@ -47,7 +47,6 @@ val_ds = val_ds.batch(32)
 
 from tensorflow.keras.layers.experimental.preprocessing import Normalization
 from tensorflow.keras.layers.experimental.preprocessing import CategoryEncoding
-from tensorflow.keras.layers.experimental.preprocessing import StringLookup
 
 
 def encode_numerical_feature(feature, name, dataset):
@@ -82,53 +81,55 @@ def encode_integer_categorical_feature(feature, name, dataset):
 
 # categorical features
 sex = keras.Input(shape=(1,), name="sex", dtype="int64")
-numcase = keras.Input(shape=(1,), name="num_cases", dtype="int64")
-zip = keras.Input(shape=(1,), name="zipcode", dtype="int64")
-socmed = keras.Input(shape=(1,), name="social_media", dtype="int64")
-basicneed = keras.Input(shape=(1,), name="basic_need", dtype="int64")
-safe = keras.Input(shape=(1,), name="safetysish", dtype="int64")
+num_cases = keras.Input(shape=(1,), name="num_cases", dtype="int64")
+zipcode = keras.Input(shape=(1,), name="zipcode", dtype="int64")
+social_media = keras.Input(shape=(1,), name="social_media", dtype="int64")
+basic_need = keras.Input(shape=(1,), name="basic_need", dtype="int64")
+safetysish = keras.Input(shape=(1,), name="safetysish", dtype="int64")
 runaway = keras.Input(shape=(1,), name="runaway", dtype="int64")
 race = keras.Input(shape=(1,), name="race", dtype="int64")
-caremh = keras.Input(shape=(1,), name="caregiver_MH", dtype="int64")
-remhome = keras.Input(shape=(1,), name="rem_home", dtype="int64")
+caregiver_MH = keras.Input(shape=(1,), name="caregiver_MH", dtype="int64")
+rem_home = keras.Input(shape=(1,), name="rem_home", dtype="int64")
 
 # Numerical features
-age = keras.Input(shape=(1,), name="age")
-aperpage = keras.Input(shape=(1,), name="aperp_age")
-agediff = keras.Input(shape=(1,), name="age_diff")
+age = keras.Input(shape=(1,), name="age", dtype="int64")
+aperp_age = keras.Input(shape=(1,), name="aperp_age", dtype="int64")
+age_diff = keras.Input(shape=(1,), name="age_diff", dtype="int64")
+
+
 
 
 all_inputs = [
     age,
     sex,
-    numcase,
-    aperpage,
-    agediff,
-    zip,
-    socmed,
-    basicneed,
-    safe,
+    num_cases,
+    aperp_age,
+    age_diff,
+    zipcode,
+    social_media,
+    basic_need,
+    safetysish,
     runaway,
     race,
-    caremh,
-    remhome,
+    caregiver_MH,
+    rem_home
 ]
 
 sex_encoded = encode_integer_categorical_feature(sex, "sex", train_ds)
-numcase_encoded = encode_integer_categorical_feature(numcase, "num_cases", train_ds)
-zip_encoded = encode_integer_categorical_feature(zip, "zipcode", train_ds)
-socmed_encoded = encode_integer_categorical_feature(socmed, "social_media", train_ds)
-basicneed_encoded = encode_integer_categorical_feature(basicneed, "basic_need", train_ds)
-safe_encoded = encode_integer_categorical_feature(safe, "safetysish", train_ds)
+numcase_encoded = encode_integer_categorical_feature(num_cases, "num_cases", train_ds)
+zip_encoded = encode_integer_categorical_feature(zipcode, "zipcode", train_ds)
+socmed_encoded = encode_integer_categorical_feature(social_media, "social_media", train_ds)
+basicneed_encoded = encode_integer_categorical_feature(basic_need, "basic_need", train_ds)
+safe_encoded = encode_integer_categorical_feature(safetysish, "safetysish", train_ds)
 runaway_encoded = encode_integer_categorical_feature(runaway, "runaway", train_ds)
 race_encoded = encode_integer_categorical_feature(race, "race", train_ds)
-caremh_encoded = encode_integer_categorical_feature(caremh, "caregiver_MH", train_ds)
-rem_encoded = encode_integer_categorical_feature(remhome, "rem_home", train_ds)
+caremh_encoded = encode_integer_categorical_feature(caregiver_MH, "caregiver_MH", train_ds)
+rem_encoded = encode_integer_categorical_feature(rem_home, "rem_home", train_ds)
 
         # Numerical features
 age_encoded = encode_numerical_feature(age, "age", train_ds)
-aperpage_encoded = encode_numerical_feature(aperpage, "aperp_age", train_ds)
-agediff_encoded = encode_numerical_feature(agediff, "age_diff", train_ds)
+aperpage_encoded = encode_numerical_feature(aperp_age, "aperp_age", train_ds)
+agediff_encoded = encode_numerical_feature(age_diff, "age_diff", train_ds)
 
 all_features = layers.concatenate(
     [
@@ -144,16 +145,9 @@ all_features = layers.concatenate(
         rem_encoded,
         age_encoded,
         aperpage_encoded,
-        agediff_encoded
+        agediff_encoded,
     ]
 )
-
-x = layers.Dense(32, activation="relu")(all_features)
-x = layers.Dropout(0.5)(x)
-output = layers.Dense(1, activation="sigmoid")(x)
-model = keras.Model(all_inputs, output)
-model.compile("adam", "binary_crossentropy", metrics=["accuracy"])
-
 
 x = layers.Dense(32, activation="relu")(all_features)
 x = layers.Dropout(0.5)(x)
@@ -171,18 +165,20 @@ model.fit(train_ds, epochs=50, validation_data=val_ds)
 sample = {
     "age": 13,
     "sex": 0,
-    "aperp_age": 39,
-    "age_diff": 16,
     "num_cases": 2,
-    "zipcode": 2,
+    "aperp_age": 29,
+    "age_diff": 16,
+
+    "zipcode": 10,
     "social_media": 1,
+
     # should be a bunch of binary cols for basic needs
-    "basic_need": 2,
+    "basic_need": 1,
     "safetysish": 0,
-    "runaway": 1,
-    "race": 2,
+    "runaway": 0,
+    "race": 0,
     "caregiver_MH": 1,
-    "remhome": 1
+    "remhome": 1,
 }
 
 input_dict = {name: tf.convert_to_tensor([value]) for name, value in sample.items()}
