@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
+from sqlalchemy import create_engine
 from flask_mysqldb import MySQL
+import pymysql
+import pandas as pd
 
 app = Flask(__name__)
-
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -11,6 +13,12 @@ app.config['MYSQL_DB'] = 'pcadata'
 
 mysql = MySQL(app)
 
+db_connection_str = 'mysql+pymysql://root:Photon959@localhost/pcadata'
+db_connection = create_engine(db_connection_str)
+
+df = pd.read_sql('SELECT * FROM MyUsers', con=db_connection)
+print(df)
+print("aloha")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
