@@ -16,7 +16,7 @@ mysql = MySQL(app)
 db_connection_str = 'mysql+pymysql://root:Photon959@localhost/pcadata'
 db_connection = create_engine(db_connection_str)
 
-df = pd.read_sql('SELECT * FROM MyUsers', con=db_connection)
+df = pd.read_sql('SELECT * FROM Circle', con=db_connection)
 print(df)
 print("aloha")
 
@@ -24,10 +24,13 @@ print("aloha")
 def index():
     if request.method == "POST":
         details = request.form
-        firstName = details['fname']
-        lastName = details['lname']
+        fname = details['fname']
+        lname = details['lname']
+        age = details['age']
+        book = details['book']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
+        cur.execute("INSERT INTO Circle(fname, lname, age, book) VALUES (%s, %s, %s, %s)",
+        (fname, lname, age, book))
         mysql.connection.commit()
         cur.close()
     return render_template('index.html', flask_token="Allahuabha : ) ")
