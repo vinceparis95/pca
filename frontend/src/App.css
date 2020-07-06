@@ -1,10 +1,14 @@
 .App {
   margin: 19px;
-  background-color: rgba(145, 255, 0,0.019);
+  background: -webkit-linear-gradient( rgba(239, 234, 219,.26),rgba(143,144, 145, 0.09)) ;
   color:rgba(145, 0, 255,1.9);
   letter-spacing:2px;
   font-family: 'Djakarta';
   font-size:19px;
+  padding:19px;
+  border-radius: 19px;
+}
+body{
 }
 
 .App-header {
@@ -37,4 +41,10 @@
 
 .field{
   margin: 19px;
+
+}
+
+.superfield{
+  overflow: auto;
+  height:252px;
 }
