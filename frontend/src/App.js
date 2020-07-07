@@ -4,9 +4,7 @@ import Navigation from './components/Navbar';
 import Routes from './Routes';
 function App() {
   return (
-    <div className="App" style={{color:'chartreuse'}}>
-    pca app - channel 3
-    <p>from flask = {window.token}</p>
+    <div className="Bod" style={{color:'chartreuse'}}>
     <Navigation />
     <Routes />
     </div>

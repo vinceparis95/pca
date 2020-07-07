@@ -1,12 +1,12 @@
 .App {
   margin: 19px;
-  background: -webkit-linear-gradient( rgba(239, 234, 219,.26),rgba(143,144, 145, 0.09)) ;
   color:rgba(145, 0, 255,1.9);
   letter-spacing:2px;
   font-family: 'Djakarta';
   font-size:19px;
-  padding:19px;
+  padding:26px;
   border-radius: 19px;
+  height:423px;
 }
 body{
 }
@@ -37,14 +37,4 @@ body{
 @keyframes root2{
   50%{width: 180px;}
 
-}
-
-.field{
-  margin: 19px;
-
-}
-
-.superfield{
-  overflow: auto;
-  height:252px;
 }

@@ -6,15 +6,15 @@ function Home() {
     <div className="App" style={{color:'chartreuse'}}>
     <form method="POST" action="">
 
-    <h1 style={{letterSpacing:'4px'}}>input data:</h1> <br/>
+    <div style={{fontSize:"19px",letterSpacing:'4px'}}>input data:</div> <br/>
 
-<div className="superfield" style={{transform:'translateY(-36px)'}}>
+<div className="superfield" style={{transform:'translateY(9px)'}}>
     <div className="field">
         <div>first name</div>
         <input type = "text" name= "fname" style={{
           fontSize:"19px", borderStyle:"solid",
           borderRadius:"9px", borderWidth:"5px",
-          borderColor:"#FF00FF45", opacity:"60%",
+          borderColor:"#FF00FF09", opacity:"60%",
         outline:"none"}} /> <br/>
     </div>
 
@@ -23,7 +23,7 @@ function Home() {
         <input type = "text" name = "lname" style={{
           fontSize:"19px", borderStyle:"solid",
           borderRadius:"9px", borderWidth:"5px",
-          borderColor:"#FF00FF45", opacity:"60%",
+          borderColor:"#FF00FF09", opacity:"60%",
         outline:"none"}} /> <br/>
     </div>
 
@@ -32,7 +32,7 @@ function Home() {
         <input type = "int" name = "age" style={{
           fontSize:"19px", borderStyle:"solid",
           borderRadius:"9px", borderWidth:"5px",
-          borderColor:"#FF00FF45", opacity:"60%",
+          borderColor:"#FF00FF09", opacity:"60%",
         outline:"none"}} /> <br/>
     </div>
 
@@ -41,7 +41,7 @@ function Home() {
         <input type = "int" name = "book" style={{
           fontSize:"19px", borderStyle:"solid",
           borderRadius:"9px", borderWidth:"5px",
-          borderColor:"#FF00FF45", opacity:"60%",
+          borderColor:"#FF00FF09", opacity:"60%",
         outline:"none"}} /> <br/>
     </div>
 
