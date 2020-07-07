@@ -35,6 +35,19 @@ def index():
         cur.close()
     return render_template('index.html', flask_token="Allahuabha : ) ")
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == "POST":
+        details = request.form
+        fname = details['fname']
+        lname = details['lname']
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO Circle(fname, lname, age, book) VALUES (%s, %s, %s, %s)",
+        (fname, lname, age, book))
+        mysql.connection.commit()
+        cur.close()
+    return render_template('index.html', flask_token="Allahuabha : ) ")
+
 
 if __name__ == '__main__':
     app.debug=True

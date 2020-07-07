@@ -1,9 +1,7 @@
 import React from 'react';
-import './App.css';
-import Navigation from './components/Navbar';
-import Routes from './Routes';
+import './Home.css';
 
-function App() {
+function Home() {
   return (
     <div className="App" style={{color:'chartreuse'}}>
     pca app - channel 3
@@ -57,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

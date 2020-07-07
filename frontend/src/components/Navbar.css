@@ -1,0 +1,33 @@
+.btn-space {
+    margin-right: 5px;
+}
+
+.root{
+  box-shadow: inset 0px 1px 1px rgba(225, 255, 0,0.6),
+  inset 0px 1px 1px rgba(145, 255, 0,0.79), 0px 1px 1px
+  rgba(225, 255, 0, 1), 0px 1px 1px rgba(225,255,0,0.6),
+  inset 0px 1px 1px rgba(145, 255, 0,0.6);
+  transition: box-shadow 190ms ease-in;
+}
+.navbar-default {
+
+}
+
+.navs{
+  margin:19px;
+  border-radius: 7px;
+  background-color: rgba(145, 255, 0,0.79);
+  border-color: rgba(145, 255, 0,0.79);
+  border: none;
+
+}
+
+.btn{
+
+  border: none !important;
+
+}
+
+.nav-link.active{
+    color : blue !important;
+}
