@@ -1,7 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import history from './../history';
-import { Navbar, Nav, Form, Card,Button } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 
 const Navigation = (props) => {
@@ -11,10 +10,11 @@ const Navigation = (props) => {
 
         <Navbar className='root' style={{backgroundColor:'rgba(145, 255, 0,0.79)', opacity:'49%',
                       fontFamily:'Djakarta', letterSpacing:'4px', fontSize:'19px', width:'145px',
-                      margin:'9px', borderRadius:'14px', fontWeight:'bold',
+                      margin:'9px', borderRadius:'14px', padding:'9px',fontWeight:'bold',
                     color:'white'
                   }}>
-          <Navbar.Brand style={{fontSize:'25px', color:'rgb(143, 0, 145)'}} href="/Labs2">
+          <Navbar.Brand style={{fontSize:'25px', color:'rgb(143, 0, 145)'}}
+          href="/login">
           PCA</Navbar.Brand>
         </Navbar>
 

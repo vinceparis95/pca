@@ -4,8 +4,6 @@ import './Home.css';
 function Home() {
   return (
     <div className="App" style={{color:'chartreuse'}}>
-    pca app - channel 3
-    <p>from flask = {window.token}</p>
     <form method="POST" action="">
 
     <h1 style={{letterSpacing:'4px'}}>input data:</h1> <br/>
