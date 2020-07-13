@@ -45,7 +45,7 @@ function Home() {
         outline:"none"}} /> <br/>
     </div>
 
-    <input type = "submit"/>
+    <input type = "submit" style={{margin:"26px"}}/>
     </div>
 
     </form>

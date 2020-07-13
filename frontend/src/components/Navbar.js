@@ -11,9 +11,8 @@ const Navigation = (props) => {
         <Navbar className='root' style={{backgroundColor:'rgba(145, 255, 0,0.79)', opacity:'49%',
                       fontFamily:'Djakarta', letterSpacing:'4px', fontSize:'19px', width:'145px',
                       margin:'9px', borderRadius:'14px', padding:'9px',fontWeight:'bold',
-                    color:'white'
-                  }}>
-          <Navbar.Brand style={{fontSize:'25px', color:'rgb(143, 0, 145)'}}
+                      color:'white',textDecoration: 'none'}}>
+          <Navbar.Brand style={{fontSize:'25px', color:'rgb(143, 0, 145)',textDecoration: 'none'}}
           href="/login">
           PCA</Navbar.Brand>
         </Navbar>
