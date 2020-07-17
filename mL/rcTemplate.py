@@ -19,13 +19,14 @@ print(
     % (len(train_dataframe), len(val_dataframe))
 )
 
+# transforming the dataframe into a training and validation datasets
 def dataframe_to_dataset(dataframe):
     dataframe = dataframe.copy()
+    # removing the target column
     labels = dataframe.pop("target")
     ds = tf.data.Dataset.from_tensor_slices((dict(dataframe), labels))
     ds = ds.shuffle(buffer_size=len(dataframe))
     return ds
-
 
 train_ds = dataframe_to_dataset(train_dataframe)
 val_ds = dataframe_to_dataset(val_dataframe)
@@ -40,7 +41,6 @@ val_ds = val_ds.batch(32)
 from tensorflow.keras.layers.experimental.preprocessing import Normalization
 from tensorflow.keras.layers.experimental.preprocessing import CategoryEncoding
 from tensorflow.keras.layers.experimental.preprocessing import StringLookup
-
 
 def encode_numerical_feature(feature, name, dataset):
     # Create a Normalization layer for our feature

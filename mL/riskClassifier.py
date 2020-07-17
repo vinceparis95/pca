@@ -7,6 +7,7 @@ from tensorflow.keras import layers
 
 # pour the data into a frame
 dataframe = pd.read_csv("/Users/vincentparis/dev/pca/mL/binarydata.csv")
+
 # print(dataframe)
 print(dataframe.shape)
 print(dataframe.head())
@@ -34,7 +35,6 @@ val_ds = dataframe_to_dataset(val_dataframe)
 
 
 #
-
 for x, y in train_ds.take(1):
     print("Input:", x)
     print("Target:", y)
@@ -42,12 +42,8 @@ for x, y in train_ds.take(1):
 train_ds = train_ds.batch(32)
 val_ds = val_ds.batch(32)
 
-
-#
-
 from tensorflow.keras.layers.experimental.preprocessing import Normalization
 from tensorflow.keras.layers.experimental.preprocessing import CategoryEncoding
-
 
 def encode_numerical_feature(feature, name, dataset):
     # Create a Normalization layer for our feature

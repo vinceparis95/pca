@@ -14,7 +14,7 @@ const Navigation = (props) => {
                       color:'white',textDecoration: 'none'}}>
           <Navbar.Brand style={{fontSize:'25px', color:'rgb(143, 0, 145)',textDecoration: 'none'}}
           href="/login">
-          PCA</Navbar.Brand>
+          PCA Intake </Navbar.Brand>
         </Navbar>
 
       </div>
