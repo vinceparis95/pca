@@ -20,8 +20,7 @@ db_connection = create_engine(db_connection_str)
 
 # pandas reads from updated table, and pulls data into df
 df = pd.read_sql('SELECT * FROM Circle', con=db_connection)
-print(df)
-print("aloha")
+
 
 @app.route('/', methods=['GET', 'POST'])
 def inputNewClient():
