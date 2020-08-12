@@ -1,0 +1,53 @@
+.Bod {
+  margin: 19px;
+  color:rgba(145, 0, 255,1.9);
+  letter-spacing:2px;
+  font-family: 'Djakarta';
+  font-size:19px;
+  padding:19px;
+  border-radius: 19px;
+}
+body{
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.root2{
+  animation: root2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  height: 90px;
+  width: 90px;
+  background-color: blue;
+  border-radius: 19px;
+  opacity: 45%;
+}
+
+@keyframes root2{
+  50%{width: 180px;}
+
+}
+
+.field{
+  margin: 26px;
+
+}
+
+.superfield{
+  overflow: auto;
+  height:360px;
+  width:290px;
+  border-radius: 14px;
+  background: -webkit-linear-gradient( rgba(239, 234, 219,.26),rgba(143,144, 145, 0.09)) ;
+
+}
